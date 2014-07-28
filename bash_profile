@@ -30,6 +30,20 @@ alias fs="stat -f \"%z bytes\""
 # ROT13-encode text. Works for decoding, too! ;)
 alias rot13='tr a-zA-Z n-za-mN-ZA-M'
 
+#Recursive directory chmod
+# usage: dchm . 755
+recursive_directory_chmod() { 
+	find $1 -type d -exec chmod $2 {} \;
+}
+alias dchm=recursive_directory_chmod
+
+#Recursive file chmod
+# usage: fchm . 644
+recursive_file_chmod() { 
+	find $1 -type f -exec chmod $2 {} \;
+}
+alias fchm=recursive_file_chmod
+
 #######################
 ##  OSX ###############
 #######################
